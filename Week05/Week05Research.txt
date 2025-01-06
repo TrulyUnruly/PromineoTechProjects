@@ -1,0 +1,38 @@
+ OOP:
+
+1. What are the four pillars of Object-Oriented Programming? Explain each pillar.
+
+The four pillars of OOP:
+(a) Abstraction - Abstraction is a way of taking a detailed process and simplifying it for ease of use. Instead of knowing how a car works in order to drive it, 
+                  all the user needs to know is how to turn it on and make it go and stop.
+
+(b) Encapsulation - Encapsulation is keeping parts of a code private and having each object control its own state and making pieces of code that aren't necessary 
+                    for a user to have access to, inaccessible.
+
+(c) Inheritance - One object can acquire the properties and methods of another. Parent/child inheritance of behaviors.
+
+(d) Polymorphism - This is similar to inheritance in that an object can inherit properties from its parent but polymorphism allows customization of those behaviors. 
+                   For example, a dog can make sound (bark) but not all sound will be the same.
+
+
+
+2. What is the relationship between a Class and an Object?
+
+A class is the blueprint for creating objects - for example, a student is a class while a particular student named Julie is an object of the student class.
+
+
+      Exceptions:
+
+5. What is an exception?
+
+An exception is an unexpected error or event that happens when running a program and causes it to crash or stop working. (Runtime error). An exception allows the flow of the program to be preserved while catching errors.
+(Some causes: Invalid user input, code errors, type mismatch, out of bound error)
+
+
+6. What are the differences between checked and unchecked exceptions?
+
+Checked exceptions happen outside of our code and are out of control of the program such as memory and network. (Derived from exception, caused by external factors like database connection)
+
+Unchecked exceptions are only thrown because of programmer error and are controllable. (Derived from Runtime Exception, caused by programming bugs/logical errors)
+
+      
