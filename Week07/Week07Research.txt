@@ -1,0 +1,28 @@
+The following resources were used in researching the following topics:
+https://www.w3schools.com/mysql
+https://www.geeksforgeeks.org/what-is-sql
+https://www.ibm.com/think/topics/database-schema
+https://phoenixnap.com/kb/mysql-data-types
+
+
+1. What is a database?  What is a schema?  Compare and contrast? 
+
+A database is a collection of data that is organized for quick search, retrieval and management by a client (software that facilitates communication with database).
+
+A schema is a blueprint of the data organization in a database. The organization of data in a schema are defined by tables and columns and simplifies database management.
+
+A schema is how data is organized whereas a database is the container the data is housed. 
+
+
+3. What is SQL?  How is it used?  
+
+SQL is a programming language used to communicate with a database. SQL stands for Structured Query Language. SQL is used to manipulate (add, edit, store and pull) data in a database.
+
+
+7. What are ten different data types MySQL provides?
+
+Numerical (int, float, double)
+Date & Time (date, time, year)
+String (char,varchar, enum, set, text)
+Spatial (geometry, point, linestring)
+JSON
