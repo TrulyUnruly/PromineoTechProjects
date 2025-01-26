@@ -1,0 +1,43 @@
+The following resources were used to answer the following questions
+https://www.w3schools.com/mysql
+https://www.youtube.com/watch?v=T11d2ScMtk8&list=PLZPZq0r_RZOMskz6MdsMOgxzheIyjo-BZ&index=19
+https://www.javatpoint.com/mysql
+https://dev.mysql.com/doc/refman/8.4/en/sql-statements.html
+
+
+
+What types of operations can you do in SQL (or specifically MySQL)?  List at least five (5) different statements that exist in MySQL? Give a brief description of what these do.
+
+In MySQL you can perform CRUD operations (Create, Read, Update and Delete). Some of the statements that can be used to accomplish these operations are: ALTER, CREATE, DROP, RENAME, INSERT, UPDATE, ROLLBACK, SET, CLONE just to name a few. 
+
+ALTER - allows you to modify an existing database or table
+CREATE - is used to create a new table in a database
+DROP - will remove an entire table or individual columns or rows
+RENAME - allows you to change the name of an existing table, columns or rows
+INSERT - used when you need to add data into table
+UPDATE - is used when modifying data and updating table to reflect those changes
+ROLLBACK - will reverse changes made since last COMMIT in database
+SET - used with UPDATE to specify values that should be updated in a table
+CLONE - a snapshot of data stored in the database
+
+
+
+What are wildcards in MySQL? How are they useful?  Give an example of a MySQL statement that could use wildcards.
+
+A wildcard in MySQL is a character that is used to substitute for one or more characters in a string. The wildcards are the percent sign(%) and the underscore(_). Wildcards are useful when wanting to find a string that starts or ends with a specific character or multiple characters within a string, improves performance and saves time filtering records from a table. A '%' is used to represent 1 or multiple characters and '_' is used to represent a single character. Wildcard characters are used with the LIKE operator and the WHERE clause to find patterns in a clause. 
+
+Example:
+Return students who's major starts with 'M' -
+
+SELECT * FROM students WHERE major LIKE 'M%';
+
+-or-
+Return students who's GPA is 3.0 or better -
+
+SELECT * FROM students WHERE gpa LIKE '3.__'; 
+(in the above example, there are 2 underscores to accommodate for 2 decimal places)
+
+
+
+
+
