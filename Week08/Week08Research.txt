@@ -1,0 +1,34 @@
+https://www.ibm.com/docs/en/ida/9.1.2?topic=entities-primary-foreign-keys
+https://www.geeksforgeeks.org/difference-between-ddl-and-dml-in-dbms/
+https://www.javatpoint.com/ddl-vs-dml
+
+
+
+
+2. Research primary & foreign keys in RDBMSs?  What are they?  Why are they useful?
+
+
+A primary key is a unique value used to define a singular row in a table whereas a foreign key is used to connect tables creating a relationship between the two tables.
+
+Primary and Foreign keys are important in that they help to create structure in RDBMSs. Since a primary key identifies each row uniquely, it can be used to update or remove specific row and prevents the creation of duplicates in the table. Foreign keys allow linking of data between tables, allowing data to be grouped logically but remain linked to one another.
+
+
+
+
+3. Define DDL and DML.   What do the acronyms mean? Describe each one. Give examples.
+
+
+DDL (Data Definition Language) are SQL commands used to create, modify and delete tables, indeses and views and are irreversible. DDL only modify the database schema and has no direct effect on the data within the database. DDL defines the column attributes of a table.
+
+ie: CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(64),
+    last_name VARCHAR(64),
+    hire_date DATE
+    );
+
+DML (Data Manipulation Language) are SQL commands used to select, insert, update, merge and delete data WITHIN a database. DML statements are reversible meaning data can be recovered in the event of an error. DML adds or updates the row (tuples) of a table.
+
+ie: INSERT INTO employees (first_name, last_name, department)
+    VALUES ('Julie', 'Lewis', 'IT');
+
