@@ -1,0 +1,30 @@
+The following resources where used in research:
+
+https://www.geeksforgeeks.org/difference-between-bdd-vs-tdd-in-software-engineering/
+https://cucumber.io/blog/bdd/bdd-vs-tdd/
+https://stackoverflow.com/questions/2665812/what-is-mocking
+https://www.hypertest.co/unit-testing/unit-test-mocking
+
+
+What is the difference between TDD and BDD?
+
+The main difference in TDD and BDD is their focus. Both help to create reliable software.
+
+TDD, Test-driven development focuses on implementation of a feature, writing tests before code and is more developer-centric. TDD is a development practice. TDD is an approach used for projects with involve API and third-party tools.
+
+BDD, Behavior-driven development focuses on behavior from the user's perspective and is a more collaborative relationship between the developers and end users. BDD focuses more on the application's behavior. BDD is a team methodology. TDD is an approach used for project development which are driven by user actions.
+
+
+
+What does mocking a class allow you to do?
+
+Mocking allows you test real objects with mock objects that simulate the behavior of the real objects which allows the test to focus on the functionality of the unit being tested. It allows simulation of the behavior of a dependency and testing without interference from other parts of the system. This allows for testing to be reliable since they don't depend on external systems that might not be available or are unreliable themselves.
+
+
+
+
+Why would you want to avoid putting credentials in plaintext in your code?
+
+Having credentials in plaintext in code would compromise the security of the code since anyone would be able to access that information.
+
+
