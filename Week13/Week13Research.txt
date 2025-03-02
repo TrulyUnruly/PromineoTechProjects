@@ -1,0 +1,15 @@
+The following was used as resources:
+https://sjinnovation.com/why-api-important
+https://www.codecademy.com/article/what-is-rest
+https://www.geeksforgeeks.org/rest-api-introduction/
+
+
+How do web APIs work? Why are they useful?
+
+APIs works like a messenger between applications and allows them to communicate by sending and receiving requests/responses. APIs are useful in that they increase developments speed by not having to build everything from scratch, enable scalability, improve functionality by testing and correct errors early, and increased security by catching security flaws through testing.
+
+
+
+What does REST stand for?  What is REST? What are some of the key concepts that identify REST?
+
+REST is Representational State Transfer. REST is an architectural style that defines the constraints used to create web based APIs. REST uses less bandwidth which makes is more suitable for internet usage. Some key concepts that identify REST are: a uniform interface that follow a consistent pattern, REST servers are identified by a unique URI, statelessness - each request made by the client to the server contains all the information needed for the server to fulfill the request without relying on storage of previous requests, a clear distinction between the client and the server, and a layered system that consists of multiple layers between client and server which allows for load balancing, security and other functionalities without impacting the client.
