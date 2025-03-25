@@ -24,10 +24,6 @@ public class Bed {
 	@EqualsAndHashCode.Exclude
 	private String bedType;
 
-	// @EqualsAndHashCode.Exclude
-	// @ToString.Exclude
-	// @ManyToMany(mappedBy = "environments", cascade = CascadeType.PERSIST)
-
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "plant_bed", joinColumns = @JoinColumn(name = "plantId"), inverseJoinColumns = @JoinColumn(name = "bedId"))
 	private Set<Plant> plants = new HashSet<>();

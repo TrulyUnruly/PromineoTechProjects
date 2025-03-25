@@ -6,9 +6,9 @@ DROP TABLE IF EXISTS schedule;
 
 CREATE TABLE schedule (
 	scheduleId int NOT NULL AUTO_INCREMENT,
-	sowDate varchar(12) NOT NULL,
-	transplantDate varchar(12) NOT NULL,
-	harvestDate varchar(12),
+	sowDate varchar(60),
+	transplantDate varchar(60),
+	harvestDate varchar(60),
 	PRIMARY KEY (scheduleId)
 );
 
@@ -20,10 +20,10 @@ CREATE TABLE climate (
 
 CREATE TABLE plant (
 	plantId int NOT NULL AUTO_INCREMENT,
+	plantName varchar(128) NOT NULL,
+	plantType varchar(128) NOT NULL,
 	scheduleId int NOT NULL,
 	climateId int NOT NULL,
-	plantName varchar(60) NOT NULL,
-	plantType varchar(60) NOT NULL,
 	PRIMARY KEY(plantId),
 	FOREIGN KEY(scheduleId) REFERENCES schedule (scheduleId) ON DELETE CASCADE,
 	FOREIGN KEY(climateId) REFERENCES climate (climateId) ON DELETE CASCADE

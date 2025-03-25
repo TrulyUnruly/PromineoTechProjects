@@ -9,11 +9,11 @@ import lombok.Data;
 @Entity
 @Data
 public class Climate {
+	
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	private String type;
-
+	    private String type;
+	
 }
