@@ -19,10 +19,10 @@ public class PlantData {
 	private Set<BedResponse> beds = new HashSet<>();
 
 	public PlantData(Plant plant) {
-		plantId = plant.getPlantId();
-		plantName = plant.getPlantName();
-		plantType = plant.getPlantType();
-		climate = new ClimateData(plant.getClimateId());
+		plantId = plant.getPlant_id();
+		plantName = plant.getPlant_name();
+		plantType = plant.getPlant_type();
+		climate = new ClimateData(plant.getClimate_id());
 		for (Bed bed : plant.getBeds()) {
 			beds.add(new BedResponse(bed));
 		}
@@ -35,8 +35,8 @@ public class PlantData {
 		private String bedType;
 
 		BedResponse(Bed bed) {
-			bedId = bed.getBedId();
-			bedType = bed.getBedType();
+			bedId = bed.getBed_id();
+			bedType = bed.getBed_type();
 
 		}
 	}

@@ -10,7 +10,7 @@ public class ClimateData {
 	private Long climateId;
     private String climateType;
 	public ClimateData(Climate climate) {
-		climateId = climate.getClimateId();
+		climateId = climate.getClimate_id();
 		climateType = climate.getClimateType();
 		
 	}

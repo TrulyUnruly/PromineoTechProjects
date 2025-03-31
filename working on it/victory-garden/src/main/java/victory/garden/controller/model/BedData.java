@@ -10,8 +10,10 @@ public class BedData {
 	private Long bedId;
 	private String bedType;
 	
-	BedData(Bed bed) {
-		bedId = bed.getBedId();
-		bedType = bed.getBedType();
+	public BedData(Bed bed) {
+		bedId = bed.getBed_id();
+		bedType = bed.getBed_type();
 	}
+
+	
 }

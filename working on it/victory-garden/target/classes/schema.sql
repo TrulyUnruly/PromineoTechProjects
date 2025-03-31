@@ -5,40 +5,40 @@ DROP TABLE IF EXISTS climate;
 DROP TABLE IF EXISTS schedule;
 
 CREATE TABLE schedule (
-	scheduleId int NOT NULL AUTO_INCREMENT,
-	sowDate varchar(60),
-	transplantDate varchar(60),
-	harvestDate varchar(60),
-	PRIMARY KEY(scheduleId)
+	schedule_id int NOT NULL AUTO_INCREMENT,
+	sow_date varchar(60),
+	transplant_date varchar(60),
+	harvest_date varchar(60),
+	PRIMARY KEY(schedule_id)
 );
 
 CREATE TABLE climate (
-	climateId int  NOT NULL AUTO_INCREMENT,
-	climateType varchar(128),
-	PRIMARY KEY(climateId)
+	climate_id int  NOT NULL AUTO_INCREMENT,
+	climate_type varchar(128),
+	PRIMARY KEY(climate_id)
 );
 
 CREATE TABLE plant (
-	plantId int NOT NULL AUTO_INCREMENT,
-	plantName varchar(128) NOT NULL,
-	plantType varchar(128),
-	scheduleId int NOT NULL,
-	climateId int NOT NULL,
-	PRIMARY KEY(plantId),
-	FOREIGN KEY(scheduleId) REFERENCES schedule (scheduleId) ON DELETE CASCADE,
-	FOREIGN KEY(climateId) REFERENCES climate (climateId) ON DELETE CASCADE
+	plant_id int NOT NULL AUTO_INCREMENT,
+	plant_name varchar(128) NOT NULL,
+	plant_type varchar(128),
+	schedule_id int NOT NULL,
+	climate_id int NOT NULL,
+	PRIMARY KEY(plant_id),
+	FOREIGN KEY(schedule_id) REFERENCES schedule (schedule_id) ON DELETE CASCADE,
+	FOREIGN KEY(climate_id) REFERENCES climate (climate_id) ON DELETE CASCADE
 );
 
 CREATE TABLE bed (
-	bedId int NOT NULL AUTO_INCREMENT,
-	bedType varchar(128),
-	PRIMARY KEY(bedId)
+	bed_id int NOT NULL AUTO_INCREMENT,
+	bed_type varchar(128),
+	PRIMARY KEY(bed_id)
 );
 
 CREATE TABLE plant_bed (
-	plantId int NOT NULL,
-	bedId int NOT NULL,
-	FOREIGN KEY(plantId) REFERENCES plant (plantId) ON DELETE CASCADE,
-	FOREIGN KEY(bedId) REFERENCES bed (bedId) ON DELETE CASCADE
+	plant_id int NOT NULL,
+	bed_id int NOT NULL,
+	FOREIGN KEY(plant_id) REFERENCES plant (plant_id) ON DELETE CASCADE,
+	FOREIGN KEY(bed_id) REFERENCES bed (bed_id) ON DELETE CASCADE
 );
 

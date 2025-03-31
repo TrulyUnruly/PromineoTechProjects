@@ -12,10 +12,10 @@ public class Schedule {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long scheduleId;
+	private Long schedule_id;
 
-	private String sowDate;
-	private String transplantDate;
-	private String harvestDate;
+	private String sow_date;
+	private String transplant_date;
+	private String harvest_date;
 
 }

@@ -30,42 +30,50 @@ public class GlobalControllerErrorHandler {
 		private String timestamp;
 		private String uri;
 	}
-	
+
+	@ExceptionHandler(UnsupportedOperationException.class)
+	@ResponseStatus(code = HttpStatus.METHOD_NOT_ALLOWED)
+	public ExceptionMessage handleUnsupportedOperationException(UnsupportedOperationException ex,
+			WebRequest webRequest) {
+		return buildExceptionMessage(ex, HttpStatus.METHOD_NOT_ALLOWED, webRequest, LogStatus.MESSAGE_ONLY);
+	}
+
 	@ExceptionHandler(NoSuchElementException.class)
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
-	public ExceptionMessage handleNoSuchElementException(
-			NoSuchElementException ex, WebRequest webRequest) {
-		return buildExceptionMessage(ex, HttpStatus.NOT_FOUND, webRequest, 
-				LogStatus.MESSAGE_ONLY);			
+	public ExceptionMessage handleNoSuchElementException(NoSuchElementException ex, WebRequest webRequest) {
+		return buildExceptionMessage(ex, HttpStatus.NOT_FOUND, webRequest, LogStatus.MESSAGE_ONLY);
 	}
-	
+
 	@ExceptionHandler(DuplicateKeyException.class)
 	@ResponseStatus(code = HttpStatus.CONFLICT)
 	public ExceptionMessage handleDuplicateKeyException(DuplicateKeyException ex, WebRequest webRequest) {
 		return buildExceptionMessage(ex, HttpStatus.CONFLICT, webRequest, LogStatus.MESSAGE_ONLY);
 	}
 
-	private ExceptionMessage buildExceptionMessage(Exception ex, 
-			HttpStatus status, WebRequest webRequest,LogStatus logStatus) {
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
+	public ExceptionMessage handleException(Exception ex, WebRequest webRequest) {
+		return buildExceptionMessage(ex, HttpStatus.INTERNAL_SERVER_ERROR, webRequest, LogStatus.STACK_TRACE);
+	}
+
+	private ExceptionMessage buildExceptionMessage(Exception ex, HttpStatus status, WebRequest webRequest,
+			LogStatus logStatus) {
 		String message = ex.toString();
 		String statusReason = status.getReasonPhrase();
 		int statusCode = status.value();
 		String uri = null;
-		String timestamp = 
-				ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
-		
+		String timestamp = ZonedDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
+
 		if (webRequest instanceof ServletWebRequest swr) {
 			uri = swr.getRequest().getRequestURI();
-			}
-		
-		if(logStatus == LogStatus.MESSAGE_ONLY) {
-			log.error("Exception: {}", ex.toString());
 		}
-		else {
+
+		if (logStatus == LogStatus.MESSAGE_ONLY) {
+			log.error("Exception: {}", ex.toString());
+		} else {
 			log.error("Exception: ", ex);
 		}
-		
-		
+
 		ExceptionMessage excMsg = new ExceptionMessage();
 
 		excMsg.setMessage(message);
@@ -73,7 +81,7 @@ public class GlobalControllerErrorHandler {
 		excMsg.setStatusReason(statusReason);
 		excMsg.setTimestamp(timestamp);
 		excMsg.setUri(uri);
-		
+
 		return excMsg;
 	}
 }

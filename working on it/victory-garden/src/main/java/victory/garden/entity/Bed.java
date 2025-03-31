@@ -19,12 +19,12 @@ import lombok.EqualsAndHashCode;
 public class Bed {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long bedId;
+	private Long bed_id;
 
 	@EqualsAndHashCode.Exclude
-	private String bedType;
+	private String bed_type;
 
 	@ManyToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "plant_bed", joinColumns = @JoinColumn(name = "plantId"), inverseJoinColumns = @JoinColumn(name = "bedId"))
+	@JoinTable(name = "plant_bed", joinColumns = @JoinColumn(name = "plant_id"), inverseJoinColumns = @JoinColumn(name = "bed_id"))
 	private Set<Plant> plants = new HashSet<>();
 }

@@ -22,35 +22,35 @@ public class Plant {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "plantId")
-	private Long plantId;
+	@Column(name = "plant_id")
+	private Long plant_id;
 
 	@EqualsAndHashCode.Exclude
-	@Column(name = "plantName")
-	private String plantName;
+	@Column(name = "plant_name")
+	private String plant_name;
 
 	@EqualsAndHashCode.Exclude
-	@Column(name = "plantType")
-	private String plantType;
+	@Column(name = "plant_type")
+	private String plant_type;
 
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@OneToOne
-	@JoinColumn(name = "scheduleId", nullable = false)
-	private Schedule scheduleId;
+	@JoinColumn(name = "schedule_id", nullable = false)
+	private Schedule schedule_id;
 	
 
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@OneToOne
-	@JoinColumn(name = "climateId", nullable = false)
-	private Climate climateId;
+	@JoinColumn(name = "climate_id", nullable = false)
+	private Climate climate_id;
 	
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "plant_bed", joinColumns = @JoinColumn(name = "plantId"), inverseJoinColumns = @JoinColumn(name = "bedId"))
+	@JoinTable(name = "plant_bed", joinColumns = @JoinColumn(name = "plant_id"), inverseJoinColumns = @JoinColumn(name = "bed_id"))
 	private Set<Bed> beds;
 
 }
