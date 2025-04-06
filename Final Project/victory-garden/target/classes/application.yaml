@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: victory_garden
+    password: victory_garden
+    url: jdbc:mysql://localhost:3306/victory_garden
+    
+  jpa:
+    hibernate: 
+      ddl-auto: create
+    show-sql: true  
+    defer-datasource-initialization: true
+    
+  sql:
+    init:
+      mode: always
+      
